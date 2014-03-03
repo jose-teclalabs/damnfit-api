@@ -51,7 +51,7 @@ public class CheckingDaoImpl extends GenericDaoImpl<CheckingDTO> implements Chec
 		StringBuilder sql = new StringBuilder();
 	 	sql.append("SELECT c.address as address, Date(c.checkdate) as fechaCheck, c.namegym as namegym FROM checking c ");
 		sql.append("INNER JOIN profile_goal pg  ON c.profile_goal_id = pg.profile_goal_id ");
-		sql.append("INNER JOIN goal g ON g.goal_id = pg.goal_id where pg.profile_id = :profileId and c.status=1 and pg.active = 1 order by c.checkdate asc ");
+		sql.append("INNER JOIN goal g ON g.goal_id = pg.goal_id where pg.profile_id = :profileId and c.status=1 order by c.checkdate asc ");
 		
 		List<Checking> profileGoalList = null;
 		try {			
